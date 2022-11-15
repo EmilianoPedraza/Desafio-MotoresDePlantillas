@@ -38,3 +38,5 @@ app.get("/", (req, res) => {
 server.on("error", (error) => {
   console.log(`Ah ocurrido un ${error}`);
 });
+
+app.use(express.static(""))
