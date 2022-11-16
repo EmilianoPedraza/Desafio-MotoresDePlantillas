@@ -1,0 +1,20 @@
+html(lang="es")
+    include ../partials/head.pug
+    body(class="bg-dark")
+        main(class="col-12")
+            h2(class="text-warning text-center")="Formulario"
+                div(class="d-flex flex-column justify-content-center align-items-center")
+                    form(action="/productos" method="post" class="border border-warning rounded p-2")
+                        div(class="m-3")
+                            label(for="tittle" class="form-label text-white")="Titulo del producto"
+                            input(type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp")
+                        div(class="m-3")
+                            label(for="price" class="form-label text-white")="Precio de producto"
+                            input(type="price" class="form-control" id="price" name="price" aria-describedby="emailHelp")
+                            div(id="emailHelp" class="form-text")="Ingrese solo números, para valores decimales utilize '.' en vez de ',' de lo contrario se retornara un error del servidor..."
+                        div(class="m-3")
+                            label(for="thumbnail" class="form-label text-white")="Link de foto de producto"
+                            input(type="text" class="form-control" id="thumbnail" name="thumbnail" aria-describedby="emailHelp")
+                        button(type="submit" class="btn btn-warning")="enviar"
+                    div(onClick="stopPropagation")
+                        a(href="/productos" class="btn btn-secondary")="Ver Lista de productos"

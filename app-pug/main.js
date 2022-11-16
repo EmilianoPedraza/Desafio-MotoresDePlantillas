@@ -12,14 +12,15 @@ const server = app.listen(puerto, () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.set("view engine", "ejs")
+app.set("views", __dirname + "/views")
+app.set("view engine", "pug")
 //==============================================================================================
 app.post("/productos", (req, res) => {
   const producto = req.body;
   if (!isNaN(producto.price)) {
     producto.price = parseFloat(producto.price);
     productos.save(producto);
-    res.render("lista", { productos });
+    res.render("lista", { productos});
   } else {
     res
       .json({ error: "Error, solo números a la hora de ingresar price" })
