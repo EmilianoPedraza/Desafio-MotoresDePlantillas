@@ -18,8 +18,8 @@
               </tr>
               <%productos.productos.forEach((prod)=>{%>
                 <tr>
-                  <td class="text-light">prod.title</td>
-                  <td class="text-light">prod.price</td>
+                  <td class="text-light"><%=prod.title%></td>
+                  <td class="text-light"><%=prod.price%></td>
                   <td> <img src=<%=prod.thumbnail%> alt=<%=prod.title%> width="80px" /></td>
                 </tr>      
               <%})%>
